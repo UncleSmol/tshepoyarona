@@ -1,0 +1,65 @@
+/* Import Bebas Neue from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  /* Typography */
+  --font-primary: 'Bebas Neue', 'Oswald', 'Impact', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Brand Colors */
+  --color-primary: #c8804e;   /* Primary */
+  --color-secondary: #575956; /* Secondary */
+  --color-tertiary: #29332e;  /* Tertiary */
+}
+
+/* Global resets */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-tertiary);
+  background-color: #ffffff;
+}
+
+/* Headings use primary font explicitly (redundant but intentional for clarity) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--color-tertiary);
+  letter-spacing: 0.5px;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Utilities */
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-tertiary { color: var(--color-tertiary); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-tertiary { background-color: var(--color-tertiary); }
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+.border-tertiary { border-color: var(--color-tertiary); }
+
+/* Example components */
+button, .btn {
+  font-family: var(--font-primary);
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-family: var(--font-primary);
+}
