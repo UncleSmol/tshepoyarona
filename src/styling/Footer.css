@@ -1,0 +1,116 @@
+
+/* Footer styles for Tshepo Ya Rona */
+.footer {
+	background: color-mix(in srgb, var(--color-primary) 6%, #fff);
+	color: var(--color-secondary);
+	padding: 2rem 1rem 1rem;
+	border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+.footer__inner {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1.5rem;
+	align-items: start;
+	padding-bottom: 1rem;
+}
+
+.footer__brand {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.footer__logo .bi {
+	font-size: 2.2rem;
+	color: var(--color-primary);
+}
+.footer__title {
+	font-size: 1.15rem;
+	color: var(--color-tertiary);
+}
+.footer__tagline {
+	font-size: 0.9rem;
+	color: var(--color-secondary);
+	margin-top: 0.25rem;
+}
+
+.footer__heading {
+	font-size: 1rem;
+	color: var(--color-tertiary);
+	margin-bottom: 0.5rem;
+}
+
+.footer__links,
+.footer__contacts,
+.footer__social {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footer__links li { margin: 0.35rem 0; }
+.footer__link {
+	color: var(--color-tertiary);
+	text-decoration: none;
+}
+.footer__link:hover,
+.footer__link:focus {
+	color: var(--color-primary);
+}
+
+.footer__contacts .footer__contact-item { margin: 0.35rem 0; }
+.footer__contact-link {
+	display: inline-flex;
+	gap: 0.6rem;
+	align-items: flex-start;
+	color: var(--color-tertiary);
+	text-decoration: none;
+}
+.footer__contact-link i { font-size: 1rem; color: var(--color-primary); margin-top: 2px; }
+.footer__contact-link span { font-size: 0.95rem; }
+
+.footer__social { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+.footer__social-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border: 1px solid rgba(0,0,0,0.06);
+	color: var(--color-tertiary);
+	background: transparent;
+	text-decoration: none;
+}
+.footer__social-link i { font-size: 1rem; }
+.footer__social-link:hover,
+.footer__social-link:focus {
+	background: var(--color-primary);
+	color: #fff;
+	border-color: transparent;
+}
+
+.footer__bottom {
+	max-width: 1100px;
+	margin: 0.5rem auto 0;
+	padding-top: 0.5rem;
+	border-top: 1px solid rgba(0,0,0,0.03);
+	display: flex;
+	justify-content: center;
+	color: var(--color-secondary);
+}
+
+/* Responsive: stack sections on smaller widths */
+@media (max-width: 860px) {
+	.footer__inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+	.footer__inner { grid-template-columns: 1fr; gap: 1rem; }
+	.footer__brand { align-items: flex-start; }
+	.footer__social { gap: 0.4rem; }
+}
+
+/* Small utility tweaks to ensure footer links use global focus styles */
+.footer a:focus-visible { outline-offset: 4px; }
