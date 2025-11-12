@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const navItems = [
-  { label: 'Home', href: '#home', icon: 'bi-house-door' },
-  { label: 'About', href: '#about', icon: 'bi-info-circle' },
-  { label: 'Services', href: '#services', icon: 'bi-tools' },
-  { label: 'Projects', href: '#projects', icon: 'bi-building' },
-  { label: 'Sustainability', href: '#sustainability', icon: 'bi-leaf' },
-  { label: 'Contact', href: '#contact', icon: 'bi-envelope' },
+  { label: 'Home', href: '/', icon: 'bi-house-door' },
+  { label: 'About', href: '/about-us', icon: 'bi-info-circle' },
+  { label: 'Services', href: '/services', icon: 'bi-tools' },
+  { label: 'Projects', href: '/projects', icon: 'bi-building' },
+  { label: 'Sustainability', href: '/sustainability', icon: 'bi-leaf' },
+  { label: 'Contact', href: '/contact-us', icon: 'bi-envelope' },
 ]
 
 const Navigation = () => {
@@ -18,19 +19,22 @@ const Navigation = () => {
   return (
     <header role="banner">
       <nav aria-label="Primary" className="nav">
-        <a href="#home" className="brand" onClick={close}>
+        <Link to="/" className="brand" onClick={close}>
           <span className="bi bi-hexagon-fill" aria-hidden="true"></span>
           <span className="brand-title">Tshepo Ya Rona</span>
-        </a>
+        </Link>
 
         <button
+          type="button"
           onClick={toggle}
           aria-expanded={open}
           aria-controls="primary-menu"
           aria-label="Toggle navigation menu"
-          className="menu-toggle"
+          className={`menu-toggle ${open ? 'is-open' : ''}`}
         >
-          <i className={`bi ${open ? 'bi-x-lg' : 'bi-list'}`} aria-hidden="true"></i>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
           <span className="sr-only">Menu</span>
         </button>
 
@@ -41,26 +45,15 @@ const Navigation = () => {
         >
           {navItems.map(item => (
             <li key={item.href} role="none">
-              <a
+              <Link
                 role="menuitem"
-                href={item.href}
+                to={item.href}
                 onClick={close}
                 className="nav-link"
               >
                 <i className={`bi ${item.icon}`} aria-hidden="true"></i>
                 <span>{item.label}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <ul aria-label="Primary" className="menu-desktop">
-          {navItems.map(item => (
-            <li key={item.href}>
-              <a href={item.href} className="nav-link">
-                <i className={`bi ${item.icon}`} aria-hidden="true"></i>
-                <span>{item.label}</span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
