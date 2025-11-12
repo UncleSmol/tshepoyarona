@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "../styling/Footer.css"
 
 const company = {
   name: 'Tshepo Ya Rona',

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import "../styling/Navigation.css"
 
 const navItems = [
   { label: 'Home', href: '/', icon: 'bi-house-door' },

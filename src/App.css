@@ -46,20 +46,80 @@ h1, h2, h3, h4, h5, h6 {
 .border-secondary { border-color: var(--color-secondary); }
 .border-tertiary { border-color: var(--color-tertiary); }
 
-/* Example components */
-button, .btn {
-  font-family: var(--font-primary);
-  background: var(--color-primary);
-  color: #ffffff;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
+/* Component primitives: buttons, links, and screen-reader helpers */
+/* These are reusable patterns — prefer these over redefining styles in components. */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.badge {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  font-family: var(--font-primary);
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 80ms ease;
+  user-select: none;
 }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible {
+  outline: 3px solid rgba(0,0,0,0.08);
+  outline-offset: 3px;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: transparent;
+}
+.btn--primary:hover,
+.btn--primary:focus {
+  background: color-mix(in srgb, var(--color-primary) 85%, black 15%);
+}
+.btn--primary:disabled { opacity: 0.65; cursor: not-allowed; }
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background: color-mix(in srgb, var(--color-secondary) 8%, transparent);
+}
+
+/* Link primitives (global) — keep simple and accessible */
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+a:visited {
+  color: color-mix(in srgb, var(--color-primary) 60%, var(--color-secondary));
+}
+a:hover,
+a:focus {
+  color: color-mix(in srgb, var(--color-primary) 20%, black);
+  text-decoration-thickness: 2px;
+}
+a:active { transform: translateY(1px); }
+
+/* Small helper: visually-distinct focus for keyboard users */
+:where(a, .btn, button):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 20%, white);
+  outline-offset: 3px;
+}
+
+
