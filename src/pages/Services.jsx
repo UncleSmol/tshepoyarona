@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styling/Services.css"
+import ServicesHeroImg from '../assets/services-hero-image.jpg'
 
 const categories = [
   {
@@ -107,14 +108,19 @@ const Services = () => {
   return (
     <main id="services" className="services-page">
       {/* Hero Section */}
-      <header className="services-hero" aria-label="Our Services">
+      <header
+        className="services-hero"
+        aria-label="Our Services"
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(${ServicesHeroImg})` }}
+      >
         <div className="services-hero__overlay">
           <div className="services-hero__content">
-            <div className="services-hero__badge">
+            {/* <div className="services-hero__badge">
               <span>One-Stop Service Provider</span>
-            </div>
+            </div> */}
             <h1 className="services-hero__title">
-              Comprehensive Construction & Engineering Solutions
+              <span className="services-hero__title-main">Comprehensive Solutions</span>
+              <span className="services-hero__title-accent">On Time</span>
             </h1>
             <p className="services-hero__subtitle">
               Integrated architecture, engineering, and project management services for end-to-end project delivery. 

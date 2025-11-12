@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styling/Projects.css"
+import ProjectsHeroImg from '../assets/projects-hero-image.jpg'
 
 const projectCategories = [
   {
