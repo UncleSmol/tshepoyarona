@@ -1,0 +1,63 @@
+/* Homepage styles following AboutUs design language */
+.homepage { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; color: var(--color-tertiary); }
+
+.hero {
+  position: relative;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Support both naming conventions: .hero__content (JSX) and .hero__overlay (match AboutUs.css) */
+.hero__content,
+.hero__overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+}
+.hero__title { font-size: 2.4rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.hero__subtitle { font-size: 1.1rem; color: #eaeaea; max-width: 700px; margin: 0 auto; line-height: 1.5; }
+.hero__actions { display: flex; gap: 0.75rem; justify-content: center; margin-top: 0.75rem; }
+
+.about { margin-bottom: 1.5rem; }
+.about p { color: var(--color-secondary); line-height: 1.6; }
+
+.services { margin: 1.75rem 0; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; list-style: none; padding: 0; margin: 0; }
+.card { background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); border: 1px solid color-mix(in srgb, var(--color-primary) 6%, rgba(0,0,0,0.04)); }
+.card i { font-size: 1.3rem; color: var(--color-primary); display: block; margin-bottom: 0.5rem; }
+.card__title { margin: 0 0 0.35rem 0; color: var(--color-tertiary); }
+.card__desc { margin: 0; color: var(--color-secondary); }
+
+.projects { margin: 1.75rem 0; }
+.btn--link { background: transparent; border: none; color: var(--color-primary); padding: 0; text-decoration: underline; }
+
+.sustainability { margin: 1.75rem 0; }
+.pillars { display: flex; gap: 0.75rem; list-style: none; padding: 0; margin: 0; }
+.pillar { background: #fff; padding: 0.7rem 0.9rem; border-radius: 8px; display: flex; align-items: center; gap: 0.6rem; box-shadow: 0 6px 12px rgba(0,0,0,0.03); }
+.pillar i { color: var(--color-primary); }
+
+.contact { margin: 1.75rem 0; }
+.contact__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.contact__link { color: var(--color-tertiary); text-decoration: none; display: inline-flex; gap: 0.5rem; align-items: center; }
+
+@media (max-width: 860px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding: 1.75rem; }
+}
+@media (max-width: 520px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero { flex-direction: column; text-align: center; }
+  .hero__content { width: 100%; }
+  .hero__actions { justify-content: center; }
+}

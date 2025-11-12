@@ -1,11 +1,13 @@
 import React from 'react'
+import "../styling/Homepage.css"
+import HomepageHeroImage from "../assets/homepage-hero-image.jpg";
 
 const services = [
-  { icon: 'bi-rulers', title: 'Architecture', desc: 'Concept design, design development, and working drawings.' },
-  { icon: 'bi-diagram-3', title: 'Project Management', desc: 'Planning, governance, risk, and stakeholder management.' },
-  { icon: 'bi-building', title: 'Structural & Civil', desc: 'Structural engineering and civil works across sectors.' },
-  { icon: 'bi-lightning-charge', title: 'Electrical & Mechanical', desc: 'Building services including HVAC, power, and lighting.' },
-  { icon: 'bi-traffic-cone', title: 'Infrastructure & Transport', desc: 'Studies, feasibility, and transport systems planning.' },
+  { icon: 'bi-rulers', title: 'Architecture', desc: 'Concept design through to detailed working drawings—practical, compliant and buildable solutions.' },
+  { icon: 'bi-diagram-3', title: 'Project Management', desc: 'End-to-end project delivery: programme, cost control, procurement and on-site supervision.' },
+  { icon: 'bi-building', title: 'Structural & Civil', desc: 'Structural design, civil engineering and site coordination for public and private works.' },
+  { icon: 'bi-lightning-charge', title: 'Electrical & Mechanical', desc: 'Building services design including power, lighting, HVAC and systems coordination.' },
+  { icon: 'bi-traffic-cone', title: 'Infrastructure & Transport', desc: 'Feasibility studies, design and construction support for transport and infrastructure projects.' },
 ]
 
 const pillars = [
@@ -19,7 +21,11 @@ const Homepage = () => {
   return (
     <main id="home" className="homepage">
       {/* Hero Section */}
-      <section className="hero" aria-label="Hero">
+      <section
+        className="hero"
+        aria-label="Hero"
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)), url(${HomepageHeroImage})` }}
+      >
         <div className="hero__content">
           <h1 className="hero__title">Delivering Quality On Time</h1>
           <p className="hero__subtitle">Tshepo Ya Rona is a multidisciplinary construction, engineering, and project management company.</p>
@@ -84,7 +90,7 @@ const Homepage = () => {
         <ul className="contact__list" role="list">
           <li><a href="tel:+27731434440" className="contact__link"><i className="bi bi-telephone" aria-hidden="true"></i> +27 73 143 4440</a></li>
           <li><a href="mailto:info@tyr-trading.co.za" className="contact__link"><i className="bi bi-envelope" aria-hidden="true"></i> info@tyr-trading.co.za</a></li>
-          <li><a href="https://www.tyr-trading.co.za" className="contact__link"><i className="bi bi-globe" aria-hidden="true"></i> www.tyr-trading.co.za</a></li>
+          <li><a href="https://www.tshepoyarona.co.za" className="contact__link"><i className="bi bi-globe" aria-hidden="true"></i> www.tshepoyarona.co.za</a></li>
         </ul>
       </section>
     </main>

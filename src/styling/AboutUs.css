@@ -1,0 +1,286 @@
+/* About page styles (AboutUs.jsx) */
+.about-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: var(--color-tertiary);
+}
+
+/* ───────────────────────────────
+   HERO SECTION
+─────────────────────────────── */
+.about-hero {
+  position: relative;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/about-us-hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-hero__overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.about-hero__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.about-hero__subtitle {
+  font-size: 1.1rem;
+  color: #eaeaea;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ───────────────────────────────
+   OVERVIEW
+─────────────────────────────── */
+.overview {
+  margin-bottom: 1.5rem;
+}
+
+.overview p {
+  line-height: 1.6;
+  color: var(--color-secondary);
+}
+
+/* ───────────────────────────────
+   MISSION, VISION & VALUES
+─────────────────────────────── */
+.mvv {
+  margin: 1.5rem 0;
+}
+
+.mvv__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.mvv article {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 6%, rgba(0, 0, 0, 0.04));
+}
+
+.mvv h3 {
+  margin-top: 0;
+  color: var(--color-tertiary);
+}
+
+.mvv p,
+.mvv ul {
+  color: var(--color-secondary);
+  line-height: 1.5;
+}
+
+.values__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.value-item .bi {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  padding: 0.35rem;
+  border-radius: 6px;
+}
+
+/* ───────────────────────────────
+   LEADERSHIP SECTION
+─────────────────────────────── */
+.leadership {
+  margin: 1.5rem 0;
+}
+
+.leaders {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.leader {
+  background: #fff;
+  padding: 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.leader__media {
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.leader__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.leader__media.bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.leader__body {
+  padding: 0;
+}
+
+.leader__name {
+  font-size: 1.05rem;
+  margin: 0 0 0.2rem 0;
+  color: var(--color-tertiary);
+}
+
+.leader__role {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+}
+
+.leader__summary {
+  color: var(--color-secondary);
+  margin: 0.25rem 0 0.6rem;
+  line-height: 1.45;
+}
+
+.leader__highlights {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--color-secondary);
+}
+
+/* ───────────────────────────────
+   COMPANY DETAILS
+─────────────────────────────── */
+.details {
+  margin: 1.5rem 0;
+}
+
+.details__list {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.details__row {
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  align-items: start;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.03);
+}
+
+.details__term {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+}
+
+.details__desc {
+  margin: 0;
+  color: var(--color-tertiary);
+}
+
+/* ───────────────────────────────
+   RESPONSIVE DESIGN
+─────────────────────────────── */
+@media (max-width: 860px) {
+  .mvv__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .leaders {
+    grid-template-columns: 1fr;
+  }
+  .details__row {
+    grid-template-columns: 1fr;
+  }
+  .leader {
+    grid-template-columns: 80px 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .mvv__grid {
+    grid-template-columns: 1fr;
+  }
+  .about-hero {
+    height: 50vh;
+  }
+  .about-hero__title {
+    font-size: 1.6rem;
+  }
+  .about-hero__subtitle {
+    font-size: 0.95rem;
+  }
+  .about-page {
+    padding: 1.25rem 0.75rem;
+  }
+
+  /* Mobile: stack leader image above content to avoid overlap */
+  .leader {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem;
+  }
+  .leader__media,
+  .leader__media.bg {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  .leader__body { text-align: center; }
+  .leader__name { font-size: 1.02rem; }
+  .leader__role { margin-bottom: 0.4rem; }
+  .leader__highlights { padding-left: 0; text-align: left; margin-top: 0.4rem; }
+}
+
+/* ───────────────────────────────
+   ACCESSIBILITY & INTERACTIVITY
+─────────────────────────────── */
+.about-page a:focus-visible {
+  outline-offset: 4px;
+}
