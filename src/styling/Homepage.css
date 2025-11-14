@@ -126,6 +126,8 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   padding-top: 10vh;
+  position: relative;
+  z-index: 1;
 }
 
 .homepage__stat-item {
@@ -150,6 +152,7 @@
 .homepage__about {
   padding: 8rem 1rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
 }
 
 /* Fade from about (light) to services (tertiary) */
@@ -222,6 +225,7 @@
   padding: 8rem 1rem;
   background: var(--color-tertiary);
   color: white;
+  position: relative;
 }
 
 /* Fade from services (tertiary) to projects (light) */
@@ -316,6 +320,7 @@
 .homepage__projects {
   padding: 8rem 1rem;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  position: relative;
 }
 
 /* Fade from projects (light) to sustainability (secondary) */
@@ -380,18 +385,7 @@
   padding: 8rem 1rem;
   background: var(--color-secondary);
   color: white;
-}
-
-/* Fade from sustainability (secondary) to contact (tertiary) */
-.homepage__sustainability::after {
-  content: '';
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(to bottom, var(--color-secondary), var(--color-tertiary));
-  pointer-events: none;
+  position: relative;
 }
 
 .homepage__sustainability-container {
