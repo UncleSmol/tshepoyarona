@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0;
 }
 
 .homepage__hero-overlay {
@@ -101,10 +102,9 @@
 .homepage__stats {
   background: var(--color-tertiary);
   color: white;
-  padding: 3rem 1rem;
-  margin-top: -15vh;
+  padding: 12rem 1rem 4rem;
   position: relative;
-  z-index: 3;
+  z-index: 1;
 }
 
 /* Fade from stats (tertiary) to about (light bg) */
@@ -125,9 +125,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  padding-top: 10vh;
-  position: relative;
-  z-index: 1;
 }
 
 .homepage__stat-item {
@@ -388,6 +385,18 @@
   position: relative;
 }
 
+/* Fade from sustainability (secondary) to contact (tertiary) */
+.homepage__sustainability::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-tertiary));
+  pointer-events: none;
+}
+
 .homepage__sustainability-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -618,19 +627,16 @@
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .homepage__hero {
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     background-attachment: scroll;
   }
 
   .homepage__stats {
-    margin-top: -10vh;
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
   }
 
   .homepage__stats-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    padding-top: 8vh;
   }
 
   .homepage__hero-actions {
@@ -708,7 +714,6 @@
   }
 
   .homepage__stats {
-    margin-top: 0;
     background: #f0f0f0 !important;
     color: black;
   }
