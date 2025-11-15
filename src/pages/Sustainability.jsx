@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styling/Sustainability.css"
+import SustainabilityHeroImg from '../assets/sustainability-hero-image.jpg'
 
 const pillars = [
   {
@@ -158,26 +159,33 @@ const Sustainability = () => {
   return (
     <main id="sustainability" className="sustainability-page">
       {/* Hero Section */}
-      <header className="sustainability-hero" aria-label="Sustainability Strategy">
-        <div className="sustainability-hero__overlay">
-          <div className="sustainability-hero__content">
-            <div className="sustainability-hero__badge">
-              <span>Building Responsibly</span>
-            </div>
-            <h1 className="sustainability-hero__title">Sustainability & Social Responsibility</h1>
-            <p className="sustainability-hero__subtitle">
-              Building a better future through safety, health, environmental stewardship, and quality excellence. 
-              Our commitment extends beyond construction to creating lasting positive impacts in our communities.
-            </p>
-            <div className="sustainability-hero__actions">
-              <a href="#pillars" className="btn btn--primary">Our Sustainability Pillars</a>
-              <a href="#community" className="btn btn--secondary">Community Impact</a>
-            </div>
-          </div>
-        </div>
-      </header>
+<header 
+  className="sustainability-hero" 
+  aria-label="Sustainability Strategy"
+  style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${SustainabilityHeroImg})` }}
+>
+  <div className="sustainability-hero__overlay">
+    <div className="sustainability-hero__content">
+      <div className="sustainability-hero__badge">
+        <span className="sustainability-hero__badge-text">Building Responsibly</span>
+      </div>
+      <h1 className="sustainability-hero__title">
+        <span className="sustainability-hero__title-main">Sustainability &</span>
+        <span className="sustainability-hero__title-accent">Social Responsibility</span>
+      </h1>
+      <p className="sustainability-hero__subtitle">
+        Building a better future through safety, health, environmental stewardship, and quality excellence. 
+        Our commitment extends beyond construction to creating lasting positive impacts in our communities.
+      </p>
+      <div className="sustainability-hero__actions">
+        <a href="#pillars" className="btn btn--primary">Our Sustainability Pillars</a>
+        <a href="#community" className="btn btn--secondary">Community Impact</a>
+      </div>
+    </div>
+  </div>
+</header>
 
-      {/* Stats Section */}
+      {/* Stats Section with Gradient */}
       <section className="sustainability-stats" aria-label="Sustainability Statistics">
         <div className="sustainability-stats__container">
           <div className="sustainability-stats__item">
@@ -235,7 +243,7 @@ const Sustainability = () => {
           
           <div className="pillars-grid">
             {pillars.map((pillar, index) => (
-              <article key={pillar.title} className="pillar-card" style={{ '--pillar-color': pillar.color }}>
+              <article key={pillar.title} className="pillar-card">
                 <div className="pillar-card__header">
                   <div className="pillar-card__icon">
                     <i className={`bi ${pillar.icon}`} aria-hidden="true"></i>

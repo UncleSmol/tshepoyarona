@@ -219,8 +219,12 @@ const projectHighlights = [
 const Projects = () => {
   return (
     <main id="projects" className="projects-page">
-      {/* Hero Section */}
-      <header className="projects-hero" aria-label="Our Projects">
+      {/* Hero Section - Updated with background image */}
+      <header 
+        className="projects-hero" 
+        aria-label="Our Projects"
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${ProjectsHeroImg})` }}
+      >
         <div className="projects-hero__overlay">
           <div className="projects-hero__content">
             <div className="projects-hero__badge">

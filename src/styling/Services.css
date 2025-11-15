@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom: 0;
 }
 
 .services-hero__overlay {
@@ -99,10 +100,9 @@
 .services-stats {
   background: var(--color-tertiary);
   color: white;
-  padding: 3rem 1rem;
+  padding: 12rem 1rem 4rem;
   position: relative;
-  z-index: 3;
-  margin-top: -15vh;
+  z-index: 1;
 }
 
 /* Fade from stats (tertiary) to core services (light bg) */
@@ -123,7 +123,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  padding-top: 10vh;
 }
 
 .services-stats__item {
@@ -563,14 +562,12 @@
   }
 
   .services-stats {
-    margin-top: 0;
     padding: 4rem 1rem;
   }
 
   .services-stats__container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    padding-top: 8vh;
   }
 
   .services-core,

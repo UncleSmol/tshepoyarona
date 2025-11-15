@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styling/ContactUs.css"
+import ContactUsHeroImage from '../assets/contact-us-hero-image.jpg'
 
 const contactInfo = [
   {
@@ -126,13 +127,20 @@ const ContactUs = () => {
   return (
     <main id="contact" className="contact-page">
       {/* Hero Section */}
-      <header className="contact-hero" aria-label="Contact Us">
+      <header 
+        className="contact-hero" 
+        aria-label="Contact Us"
+        style={{ backgroundImage: `url(${ContactUsHeroImage})` }}
+      >
         <div className="contact-hero__overlay">
           <div className="contact-hero__content">
             <div className="contact-hero__badge">
               <span>Ready to Build With You</span>
             </div>
-            <h1 className="contact-hero__title">Let's Start Your Project</h1>
+            <h1 className="contact-hero__title">
+              <span className="contact-hero__title-main">Let's Start Your</span>
+              <span className="contact-hero__title-accent">Project</span>
+            </h1>
             <p className="contact-hero__subtitle">
               With over 17 years of excellence in construction and engineering, 
               we're ready to bring your vision to life. Get in touch for quality, 
@@ -142,7 +150,7 @@ const ContactUs = () => {
               <a href="tel:+27731434440" className="btn btn--primary">
                 <i className="bi bi-telephone" aria-hidden="true"></i> Call Now
               </a>
-              <a href="#contact-methods" className="btn btn--secondary">
+              <a href="#quick-actions" className="btn btn--secondary">
                 View Contact Options
               </a>
             </div>
@@ -151,9 +159,9 @@ const ContactUs = () => {
       </header>
 
       {/* Quick Actions */}
-      <section className="quick-actions" aria-label="Quick Actions">
+      <section id="quick-actions" className="quick-actions" aria-label="Quick Actions">
         <div className="quick-actions__container">
-          <h2 className="contact-section__title">Get Started Immediately</h2>
+          <h2 className="quick-actions__title">Get Started Immediately</h2>
           <p className="quick-actions__intro">
             Choose the contact method that works best for you. Our team is ready to assist with your project requirements.
           </p>
@@ -163,7 +171,7 @@ const ContactUs = () => {
               <a 
                 key={action.title} 
                 href={action.link}
-                className={`quick-action-card quick-action-card--${action.type}`}
+                className="quick-action-card"
               >
                 <div className="quick-action-card__icon">
                   <i className={`bi ${action.icon}`} aria-hidden="true"></i>
@@ -419,12 +427,17 @@ const ContactUs = () => {
               </div>
             </div>
             
-            <div className="map-card__placeholder">
-              <div className="map-placeholder">
-                <i className="bi bi-geo-alt" aria-hidden="true"></i>
-                <p>Interactive Map</p>
-                <span>View our location on Google Maps</span>
-              </div>
+            <div className="map-card__map">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.6390585499066!2d28.232755574384377!3d-25.749447245605886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9561b92a507d95%3A0x444f2bb097daf3a9!2sHatfield%20Plaza%2C%201122%20Burnett%20St%2C%20Hatfield%2C%20Pretoria%2C%200028!5e0!3m2!1sen!2sza!4v1763213428163!5m2!1sen!2sza" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Tshepo Ya Rona Office Location"
+              ></iframe>
             </div>
           </div>
         </div>
